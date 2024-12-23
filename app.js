@@ -40,13 +40,90 @@
 
 // READLINE MODULE
 
-const readline = require('readline');
-const rl = readline.createInterface({input : process.stdin , 
-                        output : process.stdout
-});
+// const readline = require('readline');
+// const rl = readline.createInterface({input : process.stdin , 
+//                         output : process.stdout
+// });
 
-let num1 = Math.floor((Math.random() * 10 ) + 1);
-let num2 = Math.floor((Math.random() * 10 ) + 1);
-let ans = num1+num2;
+// let num1 = Math.floor((Math.random() * 10 ) + 1);
+// let num2 = Math.floor((Math.random() * 10 ) + 1);
+// let ans = num1+num2;
 
-r1.question();  
+// rl.question(`WHAT IS ${num1} + ${num2}? \n`,
+//     (userInput) =>{
+//           if (userInput.trim() == ans)
+//           {
+//              rl.close();
+//           }
+//           else
+//           {
+//              rl.setPrompt('Incorrect Response Tre Agaiin\n');
+//              rl.prompt();
+//              rl.on('line' , (userInput) =>{
+//                   if (userInput.trim() == ans)
+//                   {
+//                      rl.close();
+//                   }
+//                   else
+//                   {
+//                      rl.setPrompt(`Your answer of ${userInput} is incorrect: TryAgain!! \n`);
+//                      rl.prompt();
+//                   }
+//              } )
+//           }
+//     }
+// );  
+// rl.on('close' , ()=>{
+//     console.log('Correct Answer!!!');
+// });
+
+
+// File System Module
+//  const { isUtf8 } = require('buffer');
+// const fs = require('fs');
+
+//  fs.writeFile('example.txt' , "this is an example" , (err)=>{
+//     if (err)
+//     {
+//          console.log("Error");
+//     }
+//     else
+//     {
+//          console.log ("File successfully Created");
+//          fs.readFile('example.txt' ,'utf8' , (err , file) =>{
+//              if (err)
+//                 console.log(err);
+//               else
+//               console.log(file);
+//          })
+//     }
+//  } );
+
+
+// fs.rename('example1.txt' , 'example2.txt' , (err) =>
+// {
+//      if (err)  console.log("Error unable to rename");
+//      else  console.log ("File Renamed Successfully");  
+// });
+
+
+// fs.appendFile('example1.txt' , ' Hey I am Kartikeya' ,(err)=>
+// {
+//       if (err)  console.log("Error");
+//       else
+//       {
+//          console.log("Appeded Successfully \n");
+          
+//       }
+// });
+
+// fs.unlink('example2.txt' , (err) =>
+// {
+//    if (err)  console.log(err);
+//    else
+//    console.log("File Deleted Successfully");
+// });
+
+
+// part 2 working with folders
+
