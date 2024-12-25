@@ -4,7 +4,7 @@
 // console.log(tutorial.mathobj);
 
 // events module
- 
+
 // const EventEmitter = require('events');
 // const eventEmitter = new EventEmitter();
 
@@ -34,7 +34,7 @@
 // roshu.on('name' , ()=>{
 //     console.log('My name is ' + roshu.name);
 // })
- 
+
 // karu.emit('name');
 // roshu.emit('name');
 
@@ -113,7 +113,7 @@
 //       else
 //       {
 //          console.log("Appeded Successfully \n");
-          
+
 //       }
 // });
 
@@ -127,3 +127,80 @@
 
 // part 2 working with folders
 
+// const fs = require('fs');
+
+// fs.mkdir('tutorial', (err) => {
+//     if (err) console.log(err)
+//     else {
+//         fs.writeFile('./tutorial/example.txt', '1234', (err) => {
+//             if (err) console.log('error');
+//             else
+//                 console.log('File Creation successfull');
+//         });
+//     }
+
+// })
+
+ // you can only delete a folder if it is empty
+
+// fs.unlink('./tutorial/example.txt' , (err) => {
+//     if (err)  console.log (err);
+//     else
+//     {
+//         fs.rmdir('tutorial', (err) => {
+//             if (err) console.log(err)
+//             else comsole.log("Deletion Successfull!!!");
+//         });
+//         console.log ("successfully deleted the file");
+//     }
+// } )
+
+
+// fs.readdir('example' , (err , files) =>{
+//      if (err)
+//         console.log(err);
+//      else
+//      console.log (files);
+//      for (let file of files)
+//      {
+//         fs.unlink('./example/' + file , (err)=>
+//         {
+//             if (err)  console.log (err);
+//             else console.log (`${file} deleted successfully!!!` );  // to use dollar you need to use backticks
+//         } ) ;     
+//      }
+// });
+
+//Wokring with redable and writable streams 
+// reading files using strams is much better as compared to readfile 
+// readfile reads  file in a fixed len buffer which is not suitable 
+// for large files , so use streams instead which reads files in chunks
+
+// const fs = require('fs');
+// const readStream =  fs.createReadStream('./example.txt' , 'utf-8');
+// const writeStream = fs.createWriteStream('example2.txt');
+// readStream.on('data' , (chunk)=>
+// {
+//   writeStream.write(chunk);
+// });
+
+
+//PIPES AND PIPE CHAINING
+
+// const fs = require('fs');
+// const zlib = require('zlib');
+// const gzip = zlib.createGzip();
+// const readStream =  fs.createReadStream('./example.txt' , 'utf-8');
+// const writeStream = fs.createWriteStream('example2.txt.gz');
+// readStream.pipe(gzip).pipe(writeStream);
+
+//gzip <-> unzip
+
+
+// CREATING A HTTP SERVER USING HTTP MODULE
+
+const http = require('http');
+const server = http.createServer((req , res) =>
+{
+       
+});

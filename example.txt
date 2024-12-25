@@ -1,0 +1,1 @@
+The issue lies in how the ${file} is being used inside the console.log statement. In JavaScript, ${} is a placeholder for template literals, which are a feature of ES6. To use template literals, you need to enclose the string in backticks (`), not in double or single quotes.
