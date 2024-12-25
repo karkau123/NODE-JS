@@ -230,7 +230,74 @@
 
 // After Doing git init package.json file is created
 
-const _ = require('lodash');
-let example = _.fill([1,2,3,4,5] , "banana" , 1 , 4);
-console.log(example);
+// const _ = require('lodash');
+// let arr = [1,2,3,4,5];
+// let example = _.fill(arr , "banana" , 1 , 4);
+// console.log(example);
 
+// semantic versioning
+
+// "^4.17.21"
+// 4 - majoe version
+// 17 - minor version
+// 21 - patch version
+// ^ (before major version) -- this means i can do minor and patch updates // 4.x.x
+// ~ (before major version) -- this means only patch updates // 4.17.x
+// no sign -> this is the only version that you canhave hence no changes
+
+// EXPRESS WEB FRAMEWORK
+const express = require('express');
+const { extend } = require('lodash');
+const path = require('path');
+const bodyParser = require('body-parser');  // Corrected this line
+const app = express();
+
+// Middleware to serve static files from the 'static' folder under '/public' path
+app.use('/public', express.static(path.join(__dirname, 'static')));
+
+// Middleware to parse URL-encoded bodies (for form submissions)
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Route to serve the index.html file
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'static', 'index.html'));
+});
+
+// POST route to handle form data or other POST requests
+app.post('/', (req, res) => {
+    console.log(req.body);   
+    // You can do further processing here, like interacting with a database
+    res.send('Successfully posted data');
+});
+
+// Start the server on port 3007
+app.listen(3007, () => {
+    console.log('Server is running on http://localhost:3007');
+});
+
+// app.get('/example/:name/:age' ,  (req , res) =>
+// {
+//     console.log(req.params);
+//     console.log(req.query);
+//     res.send(req.params.name + ":" + req.params.age);
+// });
+
+// http://localhost:3007/example/roshni/21?tutorial=paramstutorial&sort=byage
+
+// use route parameter when u must have that data
+
+
+// serving static files with express
+
+
+// http post request with express
+
+
+
+/*
+In Express.js, the express().use method is used to register middleware functions
+to the application. Middleware functions are functions that have access to the request
+object (req), response object (res), and the next middleware function in the application's
+request-response cycle. They can execute code, modify the request and response objects, 
+end the request-response cycle, or call the next middleware function.
+*/

@@ -1,5 +1,5 @@
 {
-  "name": "node-js",
+  "name": "js",
   "version": "1.0.0",
   "description": "tutorial",
   "main": "app.js",
@@ -9,6 +9,8 @@
   "author": "kartikeya singh",
   "license": "ISC",
   "dependencies": {
+    "body": "^5.1.0",
+    "express": "^4.21.2",
     "lodash": "^4.17.21"
   }
 }
