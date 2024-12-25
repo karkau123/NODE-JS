@@ -199,8 +199,33 @@
 
 // CREATING A HTTP SERVER USING HTTP MODULE
 
-const http = require('http');
-const server = http.createServer((req , res) =>
-{
-       
-});
+// const http = require('http');
+// const server = http.createServer((req , res) =>
+// {
+//     //   res.write("Hello Node JS");
+//     //   res.end();
+//     if (req.url === '/' )
+//     {
+//           res.write('Hello Kartikeya From Node JS');
+//           res.end();
+//     }
+//     else
+//     {
+//           res.write('Using some other domain');
+//           res.end();
+//     }
+// });
+// server.listen('3000');
+
+// serving static files with http
+
+// const http = require('http');
+// const fs = require('fs'); // Load the built-in fs (File System) module
+
+// http.createServer((req, res) => {
+//     const readStream = fs.createReadStream('./static/image.jpg');
+//     res.writeHead(200, { 'Content-Type': 'image/jpg' });
+//     readStream.pipe(res);
+// }).listen(3006);
+
+ 
