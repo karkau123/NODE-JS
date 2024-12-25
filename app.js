@@ -228,4 +228,9 @@
 //     readStream.pipe(res);
 // }).listen(3006);
 
- 
+// After Doing git init package.json file is created
+
+const _ = require('lodash');
+let example = _.fill([1,2,3,4,5] , "banana" , 1 , 4);
+console.log(example);
+
