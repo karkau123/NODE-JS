@@ -249,7 +249,8 @@
 const express = require('express');
 const { extend } = require('lodash');
 const path = require('path');
-const bodyParser = require('body-parser');  // Corrected this line
+const bodyParser = require('body-parser'); 
+const Joi = require('joi');
 const app = express();
 
 // Middleware to serve static files from the 'static' folder under '/public' path
@@ -264,15 +265,30 @@ app.get('/', (req, res) => {
 });
 
 // POST route to handle form data or other POST requests
+// POST route to handle form data or other POST requests
 app.post('/', (req, res) => {
     console.log(req.body);   
     // You can do further processing here, like interacting with a database
-    res.send('Successfully posted data');
+    const schema = Joi.object().keys({
+       email : Joi.string().trim().email().required(),
+       password : Joi.string().min(5).max(10).required()
+    });
+    
+    const { error, value } = schema.validate(req.body);  // Validate the input data
+
+    if (error) {
+        console.log(error);
+        res.send('An Error Has Occurred');
+    } else {
+        console.log(value);  // This will log the validated data
+        res.send('Successfully posted data');
+    }
 });
 
+
 // Start the server on port 3007
-app.listen(3007, () => {
-    console.log('Server is running on http://localhost:3007');
+app.listen(3008, () => {
+    console.log('Server is running on http://localhost:3008');
 });
 
 // app.get('/example/:name/:age' ,  (req , res) =>
@@ -301,3 +317,28 @@ object (req), response object (res), and the next middleware function in the app
 request-response cycle. They can execute code, modify the request and response objects, 
 end the request-response cycle, or call the next middleware function.
 */
+
+
+
+
+// post --- done
+
+// jo bhi main request kroonga vo yha vs code mn print hoga requested data
+
+// sent data jo hoga vo browser pe visible hoga
+
+//The body-parser module in Express is used to parse 
+// incoming request bodies in a middleware before your request handler
+// . It enables your application to handle data sent in the body of
+//  HTTP requests,  such as when submitting forms, sending JSON data, or uploading files.
+
+
+
+/// Working with json data - express and body parser ??
+
+
+
+// User Input Validation
+
+// pt2
+
